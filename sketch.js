@@ -1,13 +1,13 @@
 var policeData;
-var train1min, train2min, train3min;  // asssign variables 
+var train1min, train2min, train3min;  // asssign variables
 var url;
 
 function setup() {
   // put setup code here
-  createCanvas(600,600);
+  createCanvas(800,1000);
   background(100);
 
-url = "http://api.bart.gov/api/etd.aspx?cmd=etd&orig=HAYW&key=MW9S-E7SL-26DU-VV8V&json=y";
+url = "https://data.sfgov.org/resource/wg3w-h783.json";
 getPoliceInfo();
 
 }
