@@ -7,7 +7,7 @@ function setup() {
   createCanvas(800,1000);
   background(100);
 
-url = "https://data.sfgov.org/resource/wg3w-h783.json";
+url = "https://data.sfgov.org/resource/wg3w-h783.json?incident_category=Larceny%20Theft";
 getPoliceInfo();
 
 }
