@@ -1,6 +1,7 @@
 var policeData;
 var sunday, monday, tuesday, wednesday, thursday, friday, saturday; // asssign variables
 var url;
+var vehicle,building,other,shoplift,bike;
 
 function preload() {
   wordData = loadJSON("https://data.sfgov.org/resource/wg3w-h783.json?incident_category=Larceny%20Theft");
@@ -24,6 +25,13 @@ function setup() {
   friday = 0;
   saturday = 0;
   sunday = 0;
+  vehicle = 0;
+  building = 0;
+  other = 0;
+  shoplift = 0;
+  bike = 0
+
+
 
 
 
@@ -52,6 +60,13 @@ function setup() {
     }
   }
 
+  //subcategory(subcatagory,variable)
+vehicle = subcategory("Larceny - From Vehicle");
+building = subcategory("Larceny Theft - From Building");
+other = subcategory("Larceny Theft - Other");
+shoplift = subcategory("Larceny Theft - Shoplifting");
+bike = subcategory("Larceny Theft - Bicycle");
+
 print(sunday + ' sunday')
 print(monday+ ' monday')
 print(tuesday+ ' tuesday')
@@ -59,6 +74,12 @@ print(wednesday+ ' wednesday')
 print(thursday+ ' thurday')
 print(friday+ ' friday')
 print(saturday+ ' saturday')
+
+print(vehicle + ' vehicle')
+print(building + ' building')
+print(other + ' other')
+print(shoplift + ' shoplifting')
+print(bike+ ' bike theft')
 
 }
 
@@ -79,6 +100,18 @@ function draw() {
 
 }
 
+// repeatable function for finding subcatagories
+function subcategory(subcatagory){
+  var variable = 0; // needs to be out of the loop
+for (var i = 0; i < 1000; i++){ // for subcatagory
+
+  var catagory = wordData[i].incident_subcategory;
+  if (catagory == subcatagory) {
+    variable += 1;
+  }
+}
+return variable;
+}
 
 
 
