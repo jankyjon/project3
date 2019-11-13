@@ -67,7 +67,7 @@ function setup() {
   rect(500, 400, 50, vehicle);
 
 
-  //subcategory(subcategory,variable)
+  //subcategory(subcatagory,variable)
   vehicle = subcategory("Larceny - From Vehicle");
   building = subcategory("Larceny Theft - From Building");
   other = subcategory("Larceny Theft - Other");
@@ -115,22 +115,21 @@ function draw() {
 
 
 // repeatable function for finding subcatagories - PLEASE DONOT DELETE
-function subcategory(subcategory) {
+function subcategory(subcatagory) {
   var variable = 0; // needs to be out of the loop
-  for (var i = 0; i < 1000; i++) { // for subcategory - reads all 999 - will error if over 1000
+  for (var i = 0; i < 1000; i++) { // for subcatagory - reads all 999 - will error if over 1000
 
     var catagory = wordData[i].incident_subcategory;
-    if (catagory == subcategory) {
+    if (catagory == subcatagory) {
       variable += 1;
     }
   }
   return variable;
 }
 
-function subcircles(subcategory, horizontalPlacement) { // this is so we can easily create and move circles based on the values
-  print('lol'); // wanna see this actually work for once!
+function subcircles(subcatagory, horizontalPlacement) { // this is so we can easily create and move circles based on the values
 
-  for (var i = 0; i < subcategory+100; i+=10) { // adding 10 each time because this draws 10 each time
+  for (var i = 0; i < subcatagory; i + 10) { // adding 10 each time because this draws 10 each time
     p = 480 - i * 10; // this will move the circles up by 10
     circle(horizontalPlacement, p, 10); // x, y, diameter
     circle(horizontalPlacement + 10, p, 10); // x, y, diameter
