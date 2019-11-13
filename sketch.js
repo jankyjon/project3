@@ -1,11 +1,11 @@
 var policeData;
 var sunday, monday, tuesday, wednesday, thursday, friday, saturday; // asssign variables
 var url;
-var vehicle,building,other,shoplift,bike;
+var vehicle, building, other, shoplift, bike;
 
 function preload() {
   wordData = loadJSON("https://data.sfgov.org/resource/wg3w-h783.json?incident_category=Larceny%20Theft");
-b1 = loadImage('images/b1.png')
+  b1 = loadImage('images/b1.png')
 }
 
 function setup() {
@@ -13,7 +13,7 @@ function setup() {
   createCanvas(1200, 500);
   // background(200);
 
-  image(b1,0,0,1200,500);
+  image(b1, 0, 0, 1200, 500);
 
   url = "https://data.sfgov.org/resource/wg3w-h783.json?incident_category=Larceny%20Theft";
   getPoliceInfo();
@@ -64,31 +64,31 @@ function setup() {
   fill(0);
   subcircles(other, 580);
 
-rect(500,400,50,vehical)
+  rect(500, 400, 50, vehicle)
 
 
   //subcategory(subcatagory,variable)
-vehicle = subcategory("Larceny - From Vehicle");
-building = subcategory("Larceny Theft - From Building");
-other = subcategory("Larceny Theft - Other");
-shoplift = subcategory("Larceny Theft - Shoplifting");
-bike = subcategory("Larceny Theft - Bicycle");
+  vehicle = subcategory("Larceny - From Vehicle");
+  building = subcategory("Larceny Theft - From Building");
+  other = subcategory("Larceny Theft - Other");
+  shoplift = subcategory("Larceny Theft - Shoplifting");
+  bike = subcategory("Larceny Theft - Bicycle");
 
 
-// print out each variable to see if data is being parced - look in the developer mode console
-print(sunday + ' sunday')
-print(monday+ ' monday')
-print(tuesday+ ' tuesday')
-print(wednesday+ ' wednesday')
-print(thursday+ ' thurday')
-print(friday+ ' friday')
-print(saturday+ ' saturday')
+  // print out each variable to see if data is being parced - look in the developer mode console
+  print(sunday + ' sunday')
+  print(monday + ' monday')
+  print(tuesday + ' tuesday')
+  print(wednesday + ' wednesday')
+  print(thursday + ' thurday')
+  print(friday + ' friday')
+  print(saturday + ' saturday')
 
-print(vehicle + ' vehicle')
-print(building + ' building')
-print(other + ' other')
-print(shoplift + ' shoplifting')
-print(bike+ ' bike theft')
+  print(vehicle + ' vehicle')
+  print(building + ' building')
+  print(other + ' other')
+  print(shoplift + ' shoplifting')
+  print(bike + ' bike theft')
 
 }
 
@@ -96,7 +96,7 @@ function getPoliceInfo() {
   loadJSON(url, gotData) // remember - got data is a function
 }
 
-function gotData(data) {      // makes sure the data is there in order to read data
+function gotData(data) { // makes sure the data is there in order to read data
   policeData = data
 
 
@@ -115,34 +115,34 @@ function draw() {
 
 
 // repeatable function for finding subcatagories - PLEASE DONOT DELETE
-function subcategory(subcatagory){
+function subcategory(subcatagory) {
   var variable = 0; // needs to be out of the loop
-for (var i = 0; i < 1000; i++){ // for subcatagory - reads all 999 - will error if over 1000
+  for (var i = 0; i < 1000; i++) { // for subcatagory - reads all 999 - will error if over 1000
 
-  var catagory = wordData[i].incident_subcategory;
-  if (catagory == subcatagory) {
-    variable += 1;
+    var catagory = wordData[i].incident_subcategory;
+    if (catagory == subcatagory) {
+      variable += 1;
+    }
   }
-}
-return variable;
+  return variable;
 }
 
-function subcircles(subcatagory, horizontalPlacement) {   // this is so we can easily create and move circles based on the values
+function subcircles(subcatagory, horizontalPlacement) { // this is so we can easily create and move circles based on the values
 
-for (var i = 0; i <subcatagory; i+10) { // adding 10 each time because this draws 10 each time
-  p = 480 - i *10;    // this will move the circles up by 10
-  circle(horizontalPlacement,p,10)  // x, y, diameter
-  circle(horizontalPlacement+10,p,10)  // x, y, diameter
-  circle(horizontalPlacement+20,p,10)  // x, y, diameter
-  circle(horizontalPlacement+30,p,10)  // x, y, diameter
-  circle(horizontalPlacement+40,p,10)  // x, y, diameter
-  circle(horizontalPlacement+50,p,10)  // x, y, diameter
-  circle(horizontalPlacement+60,p,10)  // x, y, diameter
-  circle(horizontalPlacement+ 70,p,10)  // x, y, diameter
-  circle(horizontalPlacement+ 80,p,10)  // x, y, diameter
-  circle(horizontalPlacement + 90,p,10)  // x, y, diameter
-  print('lol') // wanna see this actually work for once!
-}
+  for (var i = 0; i < subcatagory; i + 10) { // adding 10 each time because this draws 10 each time
+    p = 480 - i * 10; // this will move the circles up by 10
+    circle(horizontalPlacement, p, 10) // x, y, diameter
+    circle(horizontalPlacement + 10, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 20, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 30, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 40, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 50, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 60, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 70, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 80, p, 10); // x, y, diameter
+    circle(horizontalPlacement + 90, p, 10); // x, y, diameter
+    print('lol') // wanna see this actually work for once!
+  }
 
 }
 
