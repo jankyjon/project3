@@ -5,6 +5,8 @@ var vehicle, building, other, shoplift, bike;
 var wordData, b1;
 var catSlot = [];
 
+var tCol, sCol, bCol;
+
 var oompaloompa;
 
 // visualization 1: time of day
@@ -58,10 +60,15 @@ function setup() {
   colorMode(HSB);
   tr0Col = color(230,80,55);
   tr1Col = color(220,60,85);
-  tr2Col = color(210,20,95);
-  tr3Col = color(50,20,95);
-  tr4Col = color(30,60,85);
+  tr2Col = color(210,25,95);
+  tr3Col = color(45,25,95);
+  tr4Col = color(25,60,85);
   tr5Col = color(10,80,55);
+
+  tCol = color(0);
+  sCol = color(0);
+  bCol = color(68);
+
   runTimeOfDay();
 
 /*tr0Col = color(24,40,66);
@@ -210,7 +217,7 @@ function runClassic() {
     }
   }
 
-  fill(0);
+  //fill();
 
   //subcategory(subcategory,variable)
   vehicle = subcategory("Larceny - From Vehicle");
@@ -421,19 +428,19 @@ function runTimeOfDay() {
 
 
   textAlign(LEFT);
-  textSize(16);
-  fill(0);
-  stroke(0);
+  textSize(15);
+  fill(tCol);
+  stroke(sCol);
   strokeWeight(0.8);
-  text('Monday', 612, 20);
-  text('Tuesday', 612, 80);
-  text('Wednesday', 612, 155);
-  text('Thursday', 612, 230);
-  text('Friday', 612, 305);
-  text('Saturday', 612, 380);
-  text('Sunday', 612, 455);
+  text('Mondays', 612, 20);
+  text('Tuesdays', 612, 80);
+  text('Wednesdays', 612, 155);
+  text('Thursdays', 612, 230);
+  text('Fridays', 612, 305);
+  text('Saturdays', 612, 380);
+  text('Sundays', 612, 455);
 
-  //fill(0);
+  //fill(tCol);
 
   //subcategory(subcategory,variable)
   vehicle = subcategory("Larceny - From Vehicle");
@@ -635,7 +642,7 @@ function superCirclesIndividualTime(quantity, verticalPlacement, myCol) {
   noStroke();
 //  stroke(0,0.01);
 //  strokeWeight(5);
-  fill(80);
+  fill(bCol);
   print(quantity);
   oompaloompa += quantity;
 
@@ -719,7 +726,7 @@ function subCirclesIndividualTime(quantity, horizontalPlacement, myCol) { // thi
   var biggy = int(quantity / 12);
   var smally = quantity % 12;
 
-  fill(80);
+  fill(bCol);
 
   // overwriting existing circles
   for (var i = 0; i < biggy; i++) {
@@ -778,8 +785,8 @@ function drawCrimeCatTime(slot) {
 
   textAlign(CENTER);
   textSize(16);
-  fill(0);
-  stroke(0);
+  fill(tCol);
+  stroke(sCol);
   strokeWeight(0.8);
   text(tempString, 49 + (124 * slot), 487);
   subcirclesTime(catSlot[slot], 5 + (124 * slot));
@@ -807,7 +814,7 @@ function drawLegend() {
   rectAlt(1000, 540, 200, 30);
 
 
-  fill(0);
+  fill(tCol);
   stroke(0);
   strokeWeight(1);
   line(xPosMod(0),570,xPosMod(1200),570);
@@ -818,8 +825,8 @@ function drawLegend() {
 
   textAlign(LEFT);
   textSize(16);
-  fill(0);
-  stroke(0);
+  fill(tCol);
+  stroke(sCol);
   strokeWeight(0.5);
   text('Legend:', 10, 527);
 
