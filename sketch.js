@@ -65,9 +65,9 @@ function setup() {
   tr4Col = color(25,60,85);
   tr5Col = color(10,80,55);
 
-  tCol = color(0);
-  sCol = color(0);
-  bCol = color(68);
+  tCol = color(100);
+  sCol = color(100, 0.5);
+  bCol = color(25);
 
   runTimeOfDay();
 
@@ -652,13 +652,13 @@ function superCirclesIndividualTime(quantity, verticalPlacement, myCol) {
   // Overwriting Existing Circles
   for (var i = 0; i < biggy; i++) {
     for (var j = 0; j < 4; j++) {
-      circle(710 + (i * 10), verticalPlacement + (j * 10), 9.25); // x, y, diameter
+      circle(710 + (i * 10), verticalPlacement + (j * 10), 10.25); // x, y, diameter
     }
   }
 
   if (smally != 0) {
     for (var i = 0; i < smally; i++){
-      circle(710 + (biggy * 10), verticalPlacement + 30 - (i * 10), 9.25); // x, y, diameter
+      circle(710 + (biggy * 10), verticalPlacement + 30 - (i * 10), 10.25); // x, y, diameter
     }
   }
 
@@ -666,13 +666,13 @@ function superCirclesIndividualTime(quantity, verticalPlacement, myCol) {
   // Making New Circles
   for (var i = 0; i < biggy; i++) {
     for (var j = 0; j < 4; j++) {
-      circle(710 + (i * 10), verticalPlacement + (j * 10), 8); // x, y, diameter
+      circle(710 + (i * 10), verticalPlacement + (j * 10), 9.75); // x, y, diameter
     }
   }
 
   if (smally != 0) {
     for (var i = 0; i < smally; i++){
-      circle(710 + (biggy * 10), verticalPlacement + 30 - (i * 10), 8); // x, y, diameter
+      circle(710 + (biggy * 10), verticalPlacement + 30 - (i * 10), 9.75); // x, y, diameter
     }
   }
 }
@@ -731,13 +731,13 @@ function subCirclesIndividualTime(quantity, horizontalPlacement, myCol) { // thi
   // overwriting existing circles
   for (var i = 0; i < biggy; i++) {
     for (var j = 0; j < 12; j++) {
-      circle(horizontalPlacement + (j * 8), 460 - (i * 8), 7); // x, y, diameter
+      circle(horizontalPlacement + (j * 8), 460 - (i * 8), 8.25); // x, y, diameter
     }
   }
 
   if (smally != 0) {
     for (var i = 0; i < smally; i++){
-      circle(horizontalPlacement + 88 - (i * 8), 460 - (biggy * 8), 7); // x, y, diameter
+      circle(horizontalPlacement + 88 - (i * 8), 460 - (biggy * 8), 8.25); // x, y, diameter
     }
   }
 
@@ -745,13 +745,13 @@ function subCirclesIndividualTime(quantity, horizontalPlacement, myCol) { // thi
   // creating new circles
   for (var i = 0; i < biggy; i++) {
     for (var j = 0; j < 12; j++) {
-      circle(horizontalPlacement + (j * 8), 460 - (i * 8), 6); // x, y, diameter
+      circle(horizontalPlacement + (j * 8), 460 - (i * 8), 7.75); // x, y, diameter
     }
   }
 
   if (smally != 0) {
     for (var i = 0; i < smally; i++){
-      circle(horizontalPlacement + 88 - (i * 8), 460 - (biggy * 8), 6); // x, y, diameter
+      circle(horizontalPlacement + 88 - (i * 8), 460 - (biggy * 8), 7.75); // x, y, diameter
     }
   }
 }
@@ -815,8 +815,8 @@ function drawLegend() {
 
 
   fill(tCol);
-  stroke(0);
-  strokeWeight(1);
+  stroke(tCol);
+  strokeWeight(2);
   line(xPosMod(0),570,xPosMod(1200),570);
 
   for (var i = 0; i < 25; i++) {
@@ -828,7 +828,7 @@ function drawLegend() {
   fill(tCol);
   stroke(sCol);
   strokeWeight(0.5);
-  text('Legend:', 10, 527);
+  text('Legend:', 10, 526);
 
   textAlign(CENTER);
   textSize(12);
