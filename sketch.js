@@ -58,16 +58,16 @@ function setup() {
   oompaloompa = 0;
 
   colorMode(HSB);
-  tr0Col = color(230,80,55);
-  tr1Col = color(220,60,85);
-  tr2Col = color(210,25,95);
-  tr3Col = color(45,25,95);
-  tr4Col = color(25,60,85);
-  tr5Col = color(10,80,55);
+  tr0Col = color(230,80,70);
+  tr1Col = color(220,60,90);
+  tr2Col = color(210,25,100);
+  tr3Col = color(45,25,100);
+  tr4Col = color(25,60,90);
+  tr5Col = color(10,80,70);
 
   tCol = color(100);
   sCol = color(100, 0.5);
-  bCol = color(25);
+  bCol = color(18);
 
   runTimeOfDay();
 
