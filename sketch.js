@@ -55,7 +55,7 @@ var othA;
 var shoA;
 var bikA;*/ // I'm commenting this out because district is more interesting than active/closed because most are active (only 39 not) so if I only get to one, let it be district.
 
-// day of the week (districts)
+/*// day of the week (districts)
 var monD = [];
 var tueD = [];
 var wedD = [];
@@ -69,7 +69,7 @@ var vehD = [];
 var buiD = [];
 var othD = [];
 var shoD = [];
-var bikD = [];
+var bikD = [];*/ // I actually don't think I need these because I can just use -T ending ones again.
 
 function preload() {
   wordData = loadJSON("https://data.sfgov.org/resource/wg3w-h783.json?incident_category=Larceny%20Theft");
@@ -933,7 +933,7 @@ function runDistricts() {
   shoplift = 0;
   bike = 0;
 
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 11; i++) {
     vehT[i] = 0;
     buiT[i] = 0;
     othT[i] = 0;
@@ -1268,64 +1268,104 @@ function drawDaysOfWeek_Districts() {
 
 function supercircles_Districts(day, verticalPlacement) { // this is so we can easily create and move circles based on the values
   if (day == "monday") {
-    superCirclesIndividualTime(monday, verticalPlacement, tr5Col);
-    superCirclesIndividualTime(monday - int(monT[5]), verticalPlacement, tr4Col);
-    superCirclesIndividualTime(monday - int(monT[5]) - int(monT[4]), verticalPlacement, tr3Col);
-    superCirclesIndividualTime(int(monT[2]) + int(monT[1]) + int(monT[0]), verticalPlacement, tr2Col);
-    superCirclesIndividualTime(int(monT[1]) + int(monT[0]), verticalPlacement, tr1Col);
-    superCirclesIndividualTime(int(monT[0]), verticalPlacement, tr0Col);
+    superCirclesIndividual_Districts(monday, verticalPlacement, d10col);
+    superCirclesIndividual_Districts(monday - int(monT[10]), verticalPlacement, d9col);
+    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]), verticalPlacement, d8col);
+    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]), verticalPlacement, d7col);
+    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]) - int(monT[7]), verticalPlacement, d6col);
+    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]) - int(monT[7]) - int(monT[6]), verticalPlacement, d5col);
+//    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]) - int(monT[7]) - int(monT[6]) - int(monT[5]), verticalPlacement, d4col);
+//    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]) - int(monT[7]) - int(monT[6]) - int(monT[5]) - int(monT[4]), verticalPlacement, d3col);
+//    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]) - int(monT[7]) - int(monT[6]) - int(monT[5]) - int(monT[4]) - int(monT[3]), verticalPlacement, d2col);
+//    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]) - int(monT[7]) - int(monT[6]) - int(monT[5]) - int(monT[4]) - int(monT[3]) - int(monT[2]), verticalPlacement, d1col);
+//    superCirclesIndividual_Districts(monday - int(monT[10]) - int(monT[9]) - int(monT[8]) - int(monT[7]) - int(monT[6]) - int(monT[5]) - int(monT[4]) - int(monT[3]) - int(monT[2]) - int(monT[1]), verticalPlacement, d0col);
+    superCirclesIndividual_Districts(int(monT[4]) + int(monT[3]) + int(monT[2]) + int(monT[1]) + int(monT[0]), verticalPlacement, d4col);
+    superCirclesIndividual_Districts(int(monT[3]) + int(monT[2]) + int(monT[1]) + int(monT[0]), verticalPlacement, d3col);
+    superCirclesIndividual_Districts(int(monT[2]) + int(monT[1]) + int(monT[0]), verticalPlacement, d2col);
+    superCirclesIndividual_Districts(int(monT[1]) + int(monT[0]), verticalPlacement, d1col);
+    superCirclesIndividual_Districts(int(monT[0]), verticalPlacement, d0col);
   }
   else if (day == "tuesday") {
-    superCirclesIndividualTime(tuesday, verticalPlacement, tr5Col);
-    superCirclesIndividualTime(tuesday - int(tueT[5]), verticalPlacement, tr4Col);
-    superCirclesIndividualTime(tuesday - int(tueT[5]) - int(tueT[4]), verticalPlacement, tr3Col);
-    superCirclesIndividualTime(int(tueT[2]) + int(tueT[1]) + int(tueT[0]), verticalPlacement, tr2Col);
-    superCirclesIndividualTime(int(tueT[1]) + int(tueT[0]), verticalPlacement, tr1Col);
-    superCirclesIndividualTime(int(tueT[0]), verticalPlacement, tr0Col);
+    superCirclesIndividual_Districts(tuesday, verticalPlacement, d10col);
+    superCirclesIndividual_Districts(tuesday - int(tueT[10]), verticalPlacement, d9col);
+    superCirclesIndividual_Districts(tuesday - int(tueT[10]) - int(tueT[9]), verticalPlacement, d8col);
+    superCirclesIndividual_Districts(tuesday - int(tueT[10]) - int(tueT[9]) - int(tueT[8]), verticalPlacement, d7col);
+    superCirclesIndividual_Districts(tuesday - int(tueT[10]) - int(tueT[9]) - int(tueT[8]) - int(tueT[7]), verticalPlacement, d6col);
+    superCirclesIndividual_Districts(tuesday - int(tueT[10]) - int(tueT[9]) - int(tueT[8]) - int(tueT[7]) - int(tueT[6]), verticalPlacement, d5col);
+    superCirclesIndividual_Districts(int(tueT[4]) + int(tueT[3]) + int(tueT[2]) + int(tueT[1]) + int(tueT[0]), verticalPlacement, d4col);
+    superCirclesIndividual_Districts(int(tueT[3]) + int(tueT[2]) + int(tueT[1]) + int(tueT[0]), verticalPlacement, d3col);
+    superCirclesIndividual_Districts(int(tueT[2]) + int(tueT[1]) + int(tueT[0]), verticalPlacement, d2col);
+    superCirclesIndividual_Districts(int(tueT[1]) + int(tueT[0]), verticalPlacement, d1col);
+    superCirclesIndividual_Districts(int(tueT[0]), verticalPlacement, d0col);
   }
   else if (day == "wednesday") {
-    superCirclesIndividualTime(wednesday, verticalPlacement, tr5Col);
-    superCirclesIndividualTime(wednesday - int(wedT[5]), verticalPlacement, tr4Col);
-    superCirclesIndividualTime(wednesday - int(wedT[5]) - int(wedT[4]), verticalPlacement, tr3Col);
-    superCirclesIndividualTime(int(wedT[2]) + int(wedT[1]) + int(wedT[0]), verticalPlacement, tr2Col);
-    superCirclesIndividualTime(int(wedT[1]) + int(wedT[0]), verticalPlacement, tr1Col);
-    superCirclesIndividualTime(int(wedT[0]), verticalPlacement, tr0Col);
+    superCirclesIndividual_Districts(wednesday, verticalPlacement, d10col);
+    superCirclesIndividual_Districts(wednesday - int(wedT[10]), verticalPlacement, d9col);
+    superCirclesIndividual_Districts(wednesday - int(wedT[10]) - int(wedT[9]), verticalPlacement, d8col);
+    superCirclesIndividual_Districts(wednesday - int(wedT[10]) - int(wedT[9]) - int(wedT[8]), verticalPlacement, d7col);
+    superCirclesIndividual_Districts(wednesday - int(wedT[10]) - int(wedT[9]) - int(wedT[8]) - int(wedT[7]), verticalPlacement, d6col);
+    superCirclesIndividual_Districts(wednesday - int(wedT[10]) - int(wedT[9]) - int(wedT[8]) - int(wedT[7]) - int(wedT[6]), verticalPlacement, d5col);
+    superCirclesIndividual_Districts(int(wedT[4]) + int(wedT[3]) + int(wedT[2]) + int(wedT[1]) + int(wedT[0]), verticalPlacement, d4col);
+    superCirclesIndividual_Districts(int(wedT[3]) + int(wedT[2]) + int(wedT[1]) + int(wedT[0]), verticalPlacement, d3col);
+    superCirclesIndividual_Districts(int(wedT[2]) + int(wedT[1]) + int(wedT[0]), verticalPlacement, d2col);
+    superCirclesIndividual_Districts(int(wedT[1]) + int(wedT[0]), verticalPlacement, d1col);
+    superCirclesIndividual_Districts(int(wedT[0]), verticalPlacement, d0col);
   }
   else if (day == "thursday") {
-    superCirclesIndividualTime(thursday, verticalPlacement, tr5Col);
-    superCirclesIndividualTime(thursday - int(thuT[5]), verticalPlacement, tr4Col);
-    superCirclesIndividualTime(thursday - int(thuT[5]) - int(thuT[4]), verticalPlacement, tr3Col);
-    superCirclesIndividualTime(int(thuT[2]) + int(thuT[1]) + int(thuT[0]), verticalPlacement, tr2Col);
-    superCirclesIndividualTime(int(thuT[1]) + int(thuT[0]), verticalPlacement, tr1Col);
-    superCirclesIndividualTime(int(thuT[0]), verticalPlacement, tr0Col);
+    superCirclesIndividual_Districts(thursday, verticalPlacement, d10col);
+    superCirclesIndividual_Districts(thursday - int(thuT[10]), verticalPlacement, d9col);
+    superCirclesIndividual_Districts(thursday - int(thuT[10]) - int(thuT[9]), verticalPlacement, d8col);
+    superCirclesIndividual_Districts(thursday - int(thuT[10]) - int(thuT[9]) - int(thuT[8]), verticalPlacement, d7col);
+    superCirclesIndividual_Districts(thursday - int(thuT[10]) - int(thuT[9]) - int(thuT[8]) - int(thuT[7]), verticalPlacement, d6col);
+    superCirclesIndividual_Districts(thursday - int(thuT[10]) - int(thuT[9]) - int(thuT[8]) - int(thuT[7]) - int(thuT[6]), verticalPlacement, d5col);
+    superCirclesIndividual_Districts(int(thuT[4]) + int(thuT[3]) + int(thuT[2]) + int(thuT[1]) + int(thuT[0]), verticalPlacement, d4col);
+    superCirclesIndividual_Districts(int(thuT[3]) + int(thuT[2]) + int(thuT[1]) + int(thuT[0]), verticalPlacement, d3col);
+    superCirclesIndividual_Districts(int(thuT[2]) + int(thuT[1]) + int(thuT[0]), verticalPlacement, d2col);
+    superCirclesIndividual_Districts(int(thuT[1]) + int(thuT[0]), verticalPlacement, d1col);
+    superCirclesIndividual_Districts(int(thuT[0]), verticalPlacement, d0col);
   }
   else if (day == "friday") {
-    superCirclesIndividualTime(friday, verticalPlacement, tr5Col);
-    superCirclesIndividualTime(friday - int(friT[5]), verticalPlacement, tr4Col);
-    superCirclesIndividualTime(friday - int(friT[5]) - int(friT[4]), verticalPlacement, tr3Col);
-    superCirclesIndividualTime(int(friT[2]) + int(friT[1]) + int(friT[0]), verticalPlacement, tr2Col);
-    superCirclesIndividualTime(int(friT[1]) + int(friT[0]), verticalPlacement, tr1Col);
-    superCirclesIndividualTime(int(friT[0]), verticalPlacement, tr0Col);
+    superCirclesIndividual_Districts(friday, verticalPlacement, d10col);
+    superCirclesIndividual_Districts(friday - int(friT[10]), verticalPlacement, d9col);
+    superCirclesIndividual_Districts(friday - int(friT[10]) - int(friT[9]), verticalPlacement, d8col);
+    superCirclesIndividual_Districts(friday - int(friT[10]) - int(friT[9]) - int(friT[8]), verticalPlacement, d7col);
+    superCirclesIndividual_Districts(friday - int(friT[10]) - int(friT[9]) - int(friT[8]) - int(friT[7]), verticalPlacement, d6col);
+    superCirclesIndividual_Districts(friday - int(friT[10]) - int(friT[9]) - int(friT[8]) - int(friT[7]) - int(friT[6]), verticalPlacement, d5col);
+    superCirclesIndividual_Districts(int(friT[4]) + int(friT[3]) + int(friT[2]) + int(friT[1]) + int(friT[0]), verticalPlacement, d4col);
+    superCirclesIndividual_Districts(int(friT[3]) + int(friT[2]) + int(friT[1]) + int(friT[0]), verticalPlacement, d3col);
+    superCirclesIndividual_Districts(int(friT[2]) + int(friT[1]) + int(friT[0]), verticalPlacement, d2col);
+    superCirclesIndividual_Districts(int(friT[1]) + int(friT[0]), verticalPlacement, d1col);
+    superCirclesIndividual_Districts(int(friT[0]), verticalPlacement, d0col);
   }
   else if (day == "saturday") {
-    superCirclesIndividualTime(saturday, verticalPlacement, tr5Col);
-    superCirclesIndividualTime(saturday - int(satT[5]), verticalPlacement, tr4Col);
-    superCirclesIndividualTime(saturday - int(satT[5]) - int(satT[4]), verticalPlacement, tr3Col);
-    superCirclesIndividualTime(int(satT[2]) + int(satT[1]) + int(satT[0]), verticalPlacement, tr2Col);
-    superCirclesIndividualTime(int(satT[1]) + int(satT[0]), verticalPlacement, tr1Col);
-    superCirclesIndividualTime(int(satT[0]), verticalPlacement, tr0Col);
+    superCirclesIndividual_Districts(saturday, verticalPlacement, d10col);
+    superCirclesIndividual_Districts(saturday - int(satT[10]), verticalPlacement, d9col);
+    superCirclesIndividual_Districts(saturday - int(satT[10]) - int(satT[9]), verticalPlacement, d8col);
+    superCirclesIndividual_Districts(saturday - int(satT[10]) - int(satT[9]) - int(satT[8]), verticalPlacement, d7col);
+    superCirclesIndividual_Districts(saturday - int(satT[10]) - int(satT[9]) - int(satT[8]) - int(satT[7]), verticalPlacement, d6col);
+    superCirclesIndividual_Districts(saturday - int(satT[10]) - int(satT[9]) - int(satT[8]) - int(satT[7]) - int(satT[6]), verticalPlacement, d5col);
+    superCirclesIndividual_Districts(int(satT[4]) + int(satT[3]) + int(satT[2]) + int(satT[1]) + int(satT[0]), verticalPlacement, d4col);
+    superCirclesIndividual_Districts(int(satT[3]) + int(satT[2]) + int(satT[1]) + int(satT[0]), verticalPlacement, d3col);
+    superCirclesIndividual_Districts(int(satT[2]) + int(satT[1]) + int(satT[0]), verticalPlacement, d2col);
+    superCirclesIndividual_Districts(int(satT[1]) + int(satT[0]), verticalPlacement, d1col);
+    superCirclesIndividual_Districts(int(satT[0]), verticalPlacement, d0col);
   }
   else if (day == "sunday") {
-    superCirclesIndividualTime(sunday, verticalPlacement, tr5Col);
-    superCirclesIndividualTime(sunday - int(sunT[5]), verticalPlacement, tr4Col);
-    superCirclesIndividualTime(sunday - int(sunT[5]) - int(sunT[4]), verticalPlacement, tr3Col);
-    superCirclesIndividualTime(int(sunT[2]) + int(sunT[1]) + int(sunT[0]), verticalPlacement, tr2Col);
-    superCirclesIndividualTime(int(sunT[1]) + int(sunT[0]), verticalPlacement, tr1Col);
-    superCirclesIndividualTime(int(sunT[0]), verticalPlacement, tr0Col);
+    superCirclesIndividual_Districts(sunday, verticalPlacement, d10col);
+    superCirclesIndividual_Districts(sunday - int(sunT[10]), verticalPlacement, d9col);
+    superCirclesIndividual_Districts(sunday - int(sunT[10]) - int(sunT[9]), verticalPlacement, d8col);
+    superCirclesIndividual_Districts(sunday - int(sunT[10]) - int(sunT[9]) - int(sunT[8]), verticalPlacement, d7col);
+    superCirclesIndividual_Districts(sunday - int(sunT[10]) - int(sunT[9]) - int(sunT[8]) - int(sunT[7]), verticalPlacement, d6col);
+    superCirclesIndividual_Districts(sunday - int(sunT[10]) - int(sunT[9]) - int(sunT[8]) - int(sunT[7]) - int(sunT[6]), verticalPlacement, d5col);
+    superCirclesIndividual_Districts(int(sunT[4]) + int(sunT[3]) + int(sunT[2]) + int(sunT[1]) + int(sunT[0]), verticalPlacement, d4col);
+    superCirclesIndividual_Districts(int(sunT[3]) + int(sunT[2]) + int(sunT[1]) + int(sunT[0]), verticalPlacement, d3col);
+    superCirclesIndividual_Districts(int(sunT[2]) + int(sunT[1]) + int(sunT[0]), verticalPlacement, d2col);
+    superCirclesIndividual_Districts(int(sunT[1]) + int(sunT[0]), verticalPlacement, d1col);
+    superCirclesIndividual_Districts(int(sunT[0]), verticalPlacement, d0col);
   }
 }
 
-function superCirclesIndividualTime(quantity, verticalPlacement, myCol) {
+function superCirclesIndividual_Districts(quantity, verticalPlacement, myCol) {
   noStroke();
 //  stroke(0,0.01);
 //  strokeWeight(5);
