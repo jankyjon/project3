@@ -1406,48 +1406,73 @@ function superCirclesIndividual_Districts(quantity, verticalPlacement, myCol) {
 
 function subcirclesTime(category, horizontalPlacement) {
   if (category == "vehicle") {
-    subCirclesIndividualTime(vehicle, horizontalPlacement, tr5Col);
-    subCirclesIndividualTime(vehicle - int(vehT[5]), horizontalPlacement, tr4Col);
-    subCirclesIndividualTime(vehicle - int(vehT[5]) - int(vehT[4]), horizontalPlacement, tr3Col);
-    subCirclesIndividualTime(int(vehT[2]) + int(vehT[1]) + int(vehT[0]), horizontalPlacement, tr2Col);
-    subCirclesIndividualTime(int(vehT[1]) + int(vehT[0]), horizontalPlacement, tr1Col);
-    subCirclesIndividualTime(int(vehT[0]), horizontalPlacement, tr0Col);
+    subCirclesIndividual_Districts(vehicle, horizontalPlacement, d10col);
+    subCirclesIndividual_Districts(vehicle - int(vehT[10]), horizontalPlacement, d9col);
+    subCirclesIndividual_Districts(vehicle - int(vehT[10]) - int(vehT[9]), horizontalPlacement, d8col);
+    subCirclesIndividual_Districts(vehicle - int(vehT[10]) - int(vehT[9]) - int(vehT[8]), horizontalPlacement, d7col);
+    subCirclesIndividual_Districts(vehicle - int(vehT[10]) - int(vehT[9]) - int(vehT[8]) - int(vehT[7]), horizontalPlacement, d6col);
+    subCirclesIndividual_Districts(vehicle - int(vehT[10]) - int(vehT[9]) - int(vehT[8]) - int(vehT[7]) - int(vehT[6]), horizontalPlacement, d5col);
+    subCirclesIndividual_Districts(int(vehT[4]) + int(vehT[3]) + int(vehT[2]) + int(vehT[1]) + int(vehT[0]), horizontalPlacement, d4col);
+    subCirclesIndividual_Districts(int(vehT[3]) + int(vehT[2]) + int(vehT[1]) + int(vehT[0]), horizontalPlacement, d3col);
+    subCirclesIndividual_Districts(int(vehT[2]) + int(vehT[1]) + int(vehT[0]), horizontalPlacement, d2col);
+    subCirclesIndividual_Districts(int(vehT[1]) + int(vehT[0]), horizontalPlacement, d1col);
+    subCirclesIndividual_Districts(int(vehT[0]), horizontalPlacement, d0col);
   }
   else if (category == "building") {
-    subCirclesIndividualTime(building, horizontalPlacement, tr5Col);
-    subCirclesIndividualTime(building - int(buiT[5]), horizontalPlacement, tr4Col);
-    subCirclesIndividualTime(building - int(buiT[5]) - int(buiT[4]), horizontalPlacement, tr3Col);
-    subCirclesIndividualTime(int(buiT[2]) + int(buiT[1]) + int(buiT[0]), horizontalPlacement, tr2Col);
-    subCirclesIndividualTime(int(buiT[1]) + int(buiT[0]), horizontalPlacement, tr1Col);
-    subCirclesIndividualTime(int(buiT[0]), horizontalPlacement, tr0Col);
+    subCirclesIndividual_Districts(building, horizontalPlacement, d10col);
+    subCirclesIndividual_Districts(building - int(buiT[10]), horizontalPlacement, d9col);
+    subCirclesIndividual_Districts(building - int(buiT[10]) - int(buiT[9]), horizontalPlacement, d8col);
+    subCirclesIndividual_Districts(building - int(buiT[10]) - int(buiT[9]) - int(buiT[8]), horizontalPlacement, d7col);
+    subCirclesIndividual_Districts(building - int(buiT[10]) - int(buiT[9]) - int(buiT[8]) - int(buiT[7]), horizontalPlacement, d6col);
+    subCirclesIndividual_Districts(building - int(buiT[10]) - int(buiT[9]) - int(buiT[8]) - int(buiT[7]) - int(buiT[6]), horizontalPlacement, d5col);
+    subCirclesIndividual_Districts(int(buiT[4]) + int(buiT[3]) + int(buiT[2]) + int(buiT[1]) + int(buiT[0]), horizontalPlacement, d4col);
+    subCirclesIndividual_Districts(int(buiT[3]) + int(buiT[2]) + int(buiT[1]) + int(buiT[0]), horizontalPlacement, d3col);
+    subCirclesIndividual_Districts(int(buiT[2]) + int(buiT[1]) + int(buiT[0]), horizontalPlacement, d2col);
+    subCirclesIndividual_Districts(int(buiT[1]) + int(buiT[0]), horizontalPlacement, d1col);
+    subCirclesIndividual_Districts(int(buiT[0]), horizontalPlacement, d0col);
   }
   else if (category == "other") {
-    subCirclesIndividualTime(other, horizontalPlacement, tr5Col);
-    subCirclesIndividualTime(other - int(othT[5]), horizontalPlacement, tr4Col);
-    subCirclesIndividualTime(other - int(othT[5]) - int(othT[4]), horizontalPlacement, tr3Col);
-    subCirclesIndividualTime(int(othT[2]) + int(othT[1]) + int(othT[0]), horizontalPlacement, tr2Col);
-    subCirclesIndividualTime(int(othT[1]) + int(othT[0]), horizontalPlacement, tr1Col);
-    subCirclesIndividualTime(int(othT[0]), horizontalPlacement, tr0Col);
+    subCirclesIndividual_Districts(other, horizontalPlacement, d10col);
+    subCirclesIndividual_Districts(other - int(othT[10]), horizontalPlacement, d9col);
+    subCirclesIndividual_Districts(other - int(othT[10]) - int(othT[9]), horizontalPlacement, d8col);
+    subCirclesIndividual_Districts(other - int(othT[10]) - int(othT[9]) - int(othT[8]), horizontalPlacement, d7col);
+    subCirclesIndividual_Districts(other - int(othT[10]) - int(othT[9]) - int(othT[8]) - int(othT[7]), horizontalPlacement, d6col);
+    subCirclesIndividual_Districts(other - int(othT[10]) - int(othT[9]) - int(othT[8]) - int(othT[7]) - int(othT[6]), horizontalPlacement, d5col);
+    subCirclesIndividual_Districts(int(othT[4]) + int(othT[3]) + int(othT[2]) + int(othT[1]) + int(othT[0]), horizontalPlacement, d4col);
+    subCirclesIndividual_Districts(int(othT[3]) + int(othT[2]) + int(othT[1]) + int(othT[0]), horizontalPlacement, d3col);
+    subCirclesIndividual_Districts(int(othT[2]) + int(othT[1]) + int(othT[0]), horizontalPlacement, d2col);
+    subCirclesIndividual_Districts(int(othT[1]) + int(othT[0]), horizontalPlacement, d1col);
+    subCirclesIndividual_Districts(int(othT[0]), horizontalPlacement, d0col);
   }
   else if (category == "shoplift") {
-    subCirclesIndividualTime(shoplift, horizontalPlacement, tr5Col);
-    subCirclesIndividualTime(shoplift - int(shoT[5]), horizontalPlacement, tr4Col);
-    subCirclesIndividualTime(shoplift - int(shoT[5]) - int(shoT[4]), horizontalPlacement, tr3Col);
-    subCirclesIndividualTime(int(shoT[2]) + int(shoT[1]) + int(shoT[0]), horizontalPlacement, tr2Col);
-    subCirclesIndividualTime(int(shoT[1]) + int(shoT[0]), horizontalPlacement, tr1Col);
-    subCirclesIndividualTime(int(shoT[0]), horizontalPlacement, tr0Col);
+    subCirclesIndividual_Districts(shoplift, horizontalPlacement, d10col);
+    subCirclesIndividual_Districts(shoplift - int(shoT[10]), horizontalPlacement, d9col);
+    subCirclesIndividual_Districts(shoplift - int(shoT[10]) - int(shoT[9]), horizontalPlacement, d8col);
+    subCirclesIndividual_Districts(shoplift - int(shoT[10]) - int(shoT[9]) - int(shoT[8]), horizontalPlacement, d7col);
+    subCirclesIndividual_Districts(shoplift - int(shoT[10]) - int(shoT[9]) - int(shoT[8]) - int(shoT[7]), horizontalPlacement, d6col);
+    subCirclesIndividual_Districts(shoplift - int(shoT[10]) - int(shoT[9]) - int(shoT[8]) - int(shoT[7]) - int(shoT[6]), horizontalPlacement, d5col);
+    subCirclesIndividual_Districts(int(shoT[4]) + int(shoT[3]) + int(shoT[2]) + int(shoT[1]) + int(shoT[0]), horizontalPlacement, d4col);
+    subCirclesIndividual_Districts(int(shoT[3]) + int(shoT[2]) + int(shoT[1]) + int(shoT[0]), horizontalPlacement, d3col);
+    subCirclesIndividual_Districts(int(shoT[2]) + int(shoT[1]) + int(shoT[0]), horizontalPlacement, d2col);
+    subCirclesIndividual_Districts(int(shoT[1]) + int(shoT[0]), horizontalPlacement, d1col);
+    subCirclesIndividual_Districts(int(shoT[0]), horizontalPlacement, d0col);
   }
   else if (category == "bike") {
-    subCirclesIndividualTime(bike, horizontalPlacement, tr5Col);
-    subCirclesIndividualTime(bike - int(bikT[5]), horizontalPlacement, tr4Col);
-    subCirclesIndividualTime(bike - int(bikT[5]) - int(bikT[4]), horizontalPlacement, tr3Col);
-    subCirclesIndividualTime(int(bikT[2]) + int(bikT[1]) + int(bikT[0]), horizontalPlacement, tr2Col);
-    subCirclesIndividualTime(int(bikT[1]) + int(bikT[0]), horizontalPlacement, tr1Col);
-    subCirclesIndividualTime(int(bikT[0]), horizontalPlacement, tr0Col);
+    subCirclesIndividual_Districts(bike, horizontalPlacement, d10col);
+    subCirclesIndividual_Districts(bike - int(bikT[10]), horizontalPlacement, d9col);
+    subCirclesIndividual_Districts(bike - int(bikT[10]) - int(bikT[9]), horizontalPlacement, d8col);
+    subCirclesIndividual_Districts(bike - int(bikT[10]) - int(bikT[9]) - int(bikT[8]), horizontalPlacement, d7col);
+    subCirclesIndividual_Districts(bike - int(bikT[10]) - int(bikT[9]) - int(bikT[8]) - int(bikT[7]), horizontalPlacement, d6col);
+    subCirclesIndividual_Districts(bike - int(bikT[10]) - int(bikT[9]) - int(bikT[8]) - int(bikT[7]) - int(bikT[6]), horizontalPlacement, d5col);
+    subCirclesIndividual_Districts(int(bikT[4]) + int(bikT[3]) + int(bikT[2]) + int(bikT[1]) + int(bikT[0]), horizontalPlacement, d4col);
+    subCirclesIndividual_Districts(int(bikT[3]) + int(bikT[2]) + int(bikT[1]) + int(bikT[0]), horizontalPlacement, d3col);
+    subCirclesIndividual_Districts(int(bikT[2]) + int(bikT[1]) + int(bikT[0]), horizontalPlacement, d2col);
+    subCirclesIndividual_Districts(int(bikT[1]) + int(bikT[0]), horizontalPlacement, d1col);
+    subCirclesIndividual_Districts(int(bikT[0]), horizontalPlacement, d0col);
   }
 }
 
-function subCirclesIndividualTime(quantity, horizontalPlacement, myCol) { // this is so we can easily create and move circles based on the values
+function subCirclesIndividual_Districts(quantity, horizontalPlacement, myCol) { // this is so we can easily create and move circles based on the values
   noStroke();
 
   var biggy = int(quantity / 12);
