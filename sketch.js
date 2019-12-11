@@ -71,6 +71,8 @@ var othD = [];
 var shoD = [];
 var bikD = [];*/ // I actually don't think I need these because I can just use -T ending ones again.
 
+var isVersionOne;
+
 function preload() {
   wordData = loadJSON("https://data.sfgov.org/resource/wg3w-h783.json?incident_category=Larceny%20Theft");
   b1 = loadImage('images/bx.png');
@@ -116,8 +118,10 @@ function setup() {
   d9col = color(50,60,85); // Taraval
   d10col = color(230,60,70); // Tenderloin
 
-  //runTimeOfDay();
-  runDistricts();
+  isVersionOne = true;
+
+  runTimeOfDay();
+  //runDistricts();
 
 /*tr0Col = color(24,40,66);
   tr1Col = color(158,178,190);
@@ -1551,21 +1555,70 @@ function drawLegend_Districts() {
 
   stroke(d0col);
   fill(d0col);
-  text('Bayview',150, 540);
+  text('Bayview',250, 540);
 
   stroke(d1col);
   fill(d1col);
-  text('Central',375, 575);
+  text('Central',250, 575);
 
   stroke(d2col);
   fill(d2col);
-  text('Ingleside',600, 590);
+  text('Ingleside',400, 540);
 
   stroke(d3col);
   fill(d3col);
-  text('Mission',825, 590);
+  text('Mission',400, 575);
+
+  stroke(d4col);
+  fill(d4col);
+  text('Northern',550, 540);
+
+  stroke(d6col);
+  fill(d6col);
+  text('Park',550, 575);
+
+  stroke(d7col);
+  fill(d7col);
+  text('Richmond',700, 540);
+
+  stroke(d8col);
+  fill(d8col);
+  text('Southern',700, 575);
+
+  stroke(d9col);
+  fill(d9col);
+  text('Taraval',850, 540);
+
+  stroke(d10col);
+  fill(d10col);
+  text('Tenderloin',850, 575);
 
   stroke(d5col);
   fill(d5col);
-  text('Out of SF',1050, 590);
+  text('Out of SF',1000, 557.5);
+}
+
+
+function mouseClicked() {
+  if (isVersionOne) {
+    runDistricts();
+    isVersionOne = false;
+  }
+  else {
+    runTimeOfDay();
+    isVersionOne = true;
+  }
+}
+
+function keyPressed() {
+  if (keyCode === 32) {
+    if (isVersionOne) {
+      runDistricts();
+      isVersionOne = false;
+    }
+    else {
+      runTimeOfDay();
+      isVersionOne = true;
+    }
+  }
 }
