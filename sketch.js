@@ -107,16 +107,16 @@ function setup() {
 
   // colors for Districts mode:
   d0col = color(180,80,90); // Bayview
-  d1col = color(120,60,80); // Central
-  d2col = color(330,70,90); // Ingleside
-  d3col = color(270,50,80); // Mission
+  d1col = color(120,60,90); // Central
+  d2col = color(330,70,95); // Ingleside
+  d3col = color(270,50,90); // Mission
   d4col = color(20,70,90); // Northern
   d5col = color(0,0,60); // Out of SF
-  d6col = color(130,50,55); // Park
-  d7col = color(0,70,70); // Richmond
-  d8col = color(210,20,90); // Southern
+  d6col = color(110,55,85); // Park
+  d7col = color(0,65,90); // Richmond
+  d8col = color(210,20,85); // Southern
   d9col = color(50,60,85); // Taraval
-  d10col = color(230,60,70); // Tenderloin
+  d10col = color(250,60,90); // Tenderloin
 
   isVersionOne = true;
 
