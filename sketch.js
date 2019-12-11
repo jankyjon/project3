@@ -1404,7 +1404,7 @@ function superCirclesIndividual_Districts(quantity, verticalPlacement, myCol) {
   }
 }
 
-function subcirclesTime(category, horizontalPlacement) {
+function subcirclesTime_Districts(category, horizontalPlacement) {
   if (category == "vehicle") {
     subCirclesIndividual_Districts(vehicle, horizontalPlacement, d10col);
     subCirclesIndividual_Districts(vehicle - int(vehT[10]), horizontalPlacement, d9col);
@@ -1508,14 +1508,6 @@ function subCirclesIndividual_Districts(quantity, horizontalPlacement, myCol) { 
   }
 }
 
-function getSectionQuantity(category, timeslot) {
-  if (category == "vehicle") {return vehT[timeslot];}
-  else if (category == "building") {return vehT[timeslot];}
-  else if (category == "other") {return vehT[timeslot];}
-  else if (category == "shoplift") {return vehT[timeslot];}
-  else if (category == "bike") {return vehT[timeslot];}
-}
-
 function drawCrimeCatTime_Districts(slot) {
   var tempString;
 
@@ -1541,40 +1533,10 @@ function drawCrimeCatTime_Districts(slot) {
   stroke(sCol);
   strokeWeight(0.8);
   text(tempString, 49 + (124 * slot), 487);
-  subcirclesTime(catSlot[slot], 5 + (124 * slot));
+  subcirclesTime_Districts(catSlot[slot], 5 + (124 * slot));
 }
 
 function drawLegend_Districts() {
-  noStroke();
-
-  fill(tr0Col);
-  rectAlt(0, 540, 300, 30);
-
-  fill(tr1Col);
-  rectAlt(300, 540, 150, 30);
-
-  fill(tr2Col);
-  rectAlt(450, 540, 150, 30);
-
-  fill(tr3Col);
-  rectAlt(600, 540, 250, 30);
-
-  fill(tr4Col);
-  rectAlt(850, 540, 150, 30);
-
-  fill(tr5Col);
-  rectAlt(1000, 540, 200, 30);
-
-
-  fill(tCol);
-  stroke(tCol);
-  strokeWeight(2);
-  line(xPosMod(0),570,xPosMod(1200),570);
-
-  for (var i = 0; i < 25; i++) {
-    line(xPosMod(i * 50), 560, xPosMod(i * 50), 575);
-  }
-
   textAlign(LEFT);
   textSize(16);
   fill(tCol);
@@ -1582,34 +1544,28 @@ function drawLegend_Districts() {
   strokeWeight(0.5);
   text('Legend:', 10, 526);
 
+
+  strokeWeight(1);
+  textSize(20);
   textAlign(CENTER);
-  textSize(12);
-  strokeWeight(0);
-  text('Midnight', xPosMod(0), 590);
-  for (var i = 1; i < 12; i++) {
-    text(str(i) + 'am', xPosMod(i*50), 590);
-  }
-  text('Noon', xPosMod(600), 590);
-  for (var i = 13; i < 24; i++) {
-    text(str(i - 12) + 'pm', xPosMod(i*50), 590);
-  }
-  text('Midnight', xPosMod(1200), 590);
 
-  strokeWeight(0.5);
-  text('Midnight', xPosMod(0), 590);
-  text('6am', xPosMod(300), 590);
-  text('9am', xPosMod(450), 590);
-  text('Noon', xPosMod(600), 590);
-  text('5pm', xPosMod(850), 590);
-  text('8pm', xPosMod(1000), 590);
-  text('Midnight', xPosMod(1200), 590);
-}
+  stroke(d0col);
+  fill(d0col);
+  text('Bayview',150, 540);
 
-function rectAlt(xpos, ypos, width, height) {
-  rect(xPosMod(xpos), ypos, width * 0.916666667, height);
-}
+  stroke(d1col);
+  fill(d1col);
+  text('Central',375, 575);
 
-function xPosMod(xpos) {
-  var blah = (xpos * 0.916666667) + 50;
-  return blah;
+  stroke(d2col);
+  fill(d2col);
+  text('Ingleside',600, 590);
+
+  stroke(d3col);
+  fill(d3col);
+  text('Mission',825, 590);
+
+  stroke(d5col);
+  fill(d5col);
+  text('Out of SF',1050, 590);
 }
