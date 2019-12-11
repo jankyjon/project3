@@ -107,16 +107,16 @@ function setup() {
 
   // colors for Districts mode:
   d0col = color(180,80,90); // Bayview
-  d1col = color(140,60,90); // Central
+  d1col = color(140,45,90); // Central
   d2col = color(330,70,100); // Ingleside
   d3col = color(270,50,100); // Mission
   d4col = color(20,70,90); // Northern
   d5col = color(40,10,65); // Out of SF
   d6col = color(110,55,85); // Park
-  d7col = color(0,65,100); // Richmond
+  d7col = color(0,40,100); // Richmond
   d8col = color(210,25,85); // Southern
   d9col = color(50,60,85); // Taraval
-  d10col = color(250,60,100); // Tenderloin
+  d10col = color(250,45,100); // Tenderloin
 
   isVersionOne = true;
 
@@ -845,6 +845,17 @@ function drawCrimeCatTime(slot) {
 }
 
 function drawLegend() {
+  fill(255);
+  stroke(255);
+
+  circle(40, 291, 45, 296);
+  textAlign(CENTER);
+  textSize(26);
+  fill(0);
+  stroke(0);
+  text('⇄', 40, 298);
+
+
   noStroke();
 
   fill(tr0Col);
@@ -1541,6 +1552,16 @@ function drawCrimeCatTime_Districts(slot) {
 }
 
 function drawLegend_Districts() {
+  fill(255);
+  stroke(255);
+
+  circle(40, 291, 45, 296);
+  textAlign(CENTER);
+  textSize(26);
+  fill(0);
+  stroke(0);
+  text('⇄', 40, 298);
+
   textAlign(LEFT);
   textSize(16);
   fill(tCol);
@@ -1600,17 +1621,19 @@ function drawLegend_Districts() {
 
 
 function mouseClicked() {
-  if (isVersionOne) {
-    runDistricts();
-    isVersionOne = false;
-  }
-  else {
-    runTimeOfDay();
-    isVersionOne = true;
+  if (dist(mouseX,mouseY, 42.5, 293.5) < 20) {
+    if (isVersionOne) {
+      runDistricts();
+      isVersionOne = false;
+    }
+    else {
+      runTimeOfDay();
+      isVersionOne = true;
+    }
   }
 }
 
-function keyPressed() {
+/*function keyPressed() {
   if (keyCode === 32) {
     if (isVersionOne) {
       runDistricts();
@@ -1622,3 +1645,4 @@ function keyPressed() {
     }
   }
 }
+*/
