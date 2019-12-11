@@ -111,7 +111,7 @@ function setup() {
   d2col = color(330,70,100); // Ingleside
   d3col = color(270,50,100); // Mission
   d4col = color(20,70,90); // Northern
-  d5col = color(0,0,60); // Out of SF
+  d5col = color(40,10,65); // Out of SF
   d6col = color(110,55,85); // Park
   d7col = color(0,65,100); // Richmond
   d8col = color(210,25,85); // Southern
