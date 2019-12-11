@@ -114,7 +114,7 @@ function setup() {
   d5col = color(0,0,60); // Out of SF
   d6col = color(110,55,85); // Park
   d7col = color(0,65,100); // Richmond
-  d8col = color(210,20,85); // Southern
+  d8col = color(210,25,85); // Southern
   d9col = color(50,60,85); // Taraval
   d10col = color(250,60,100); // Tenderloin
 
